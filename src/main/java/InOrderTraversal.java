@@ -2,22 +2,22 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-public class PreOrderTraversal {
+public class InOrderTraversal {
 
-    public static List<Integer> preOrderRecursive(TreeNode root) {
+    public static List<Integer> inOrderRecursive(TreeNode root) {
         List<Integer> values = new LinkedList<>();
         if (root == null) {
             return values;
         }
 
+        values.addAll(inOrderRecursive(root.getLeft()));
         values.add(root.getVal());
-        values.addAll(preOrderRecursive(root.getLeft()));
-        values.addAll(preOrderRecursive(root.getRight()));
+        values.addAll(inOrderRecursive(root.getRight()));
 
         return values;
     }
 
-    public static List<Integer> preOrderIterative(TreeNode root) {
+    public static List<Integer> inOrderIterative(TreeNode root) {
         List<Integer> values = new LinkedList<>();
         if (root == null) {
             return values;
@@ -29,10 +29,10 @@ public class PreOrderTraversal {
         while(!stack.isEmpty() | current != null) {
             while (current != null) {
                 stack.push(current);
-                values.add(current.getVal());
                 current = current.getLeft();
             }
             current = stack.pop();
+            values.add(current.getVal());
             current = current.getRight();
         }
         return values;

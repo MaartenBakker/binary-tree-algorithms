@@ -8,7 +8,10 @@ public class Main {
         TreeNode node_2 = new TreeNode(2, node_4, node_5);
         TreeNode node_1 = new TreeNode(1,  node_2, node_3);
 
-        System.out.println(PreOrderTraversal.PreOrderRecursive(node_1));
-        System.out.println(PreOrderTraversal.PreOrderIterative(node_1));
+        System.out.println(PreOrderTraversal.preOrderRecursive(node_1));
+        System.out.println(PreOrderTraversal.preOrderIterative(node_1));
+
+        System.out.println(InOrderTraversal.inOrderRecursive(node_1));
+        System.out.println(InOrderTraversal.inOrderIterative(node_1));
     }
 }
