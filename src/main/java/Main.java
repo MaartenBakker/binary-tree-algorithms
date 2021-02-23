@@ -13,5 +13,8 @@ public class Main {
 
         System.out.println(InOrderTraversal.inOrderRecursive(node_1));
         System.out.println(InOrderTraversal.inOrderIterative(node_1));
+
+        System.out.println(PostOrderTraversal.postOrderRecursive(node_1));
+        System.out.println(PostOrderTraversal.postOrderIterative(node_1));
     }
 }
